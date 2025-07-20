@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groundnut Information</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Back Button */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .back-button svg {
+      width: 40px;
+      height: 40px;
+      stroke-width: 4;
+      stroke: #4CAF50; /* Green color for Groundnut */
+      fill: none;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #4CAF50; /* Green theme for Groundnut */
+    }
+
+    .info-section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Flexbox for stage-image to align text and image */
+    .stage-image {
+      display: flex;
+      justify-content: space-between; /* Aligns text to left and image to right */
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .stage-image img {
+      width: 40%;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animated {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 80%;
+      max-height: 80%;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 5%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-button" onclick="goBack()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15 6l-6 6 6 6"></path>
+    </svg>
+  </button>
+
+  <div class="container">
+    <h1 class="animated">Groundnut Information</h1>
+
+    <div class="info-section">
+      <h2 class="animated">Pre-Planting (Before Sowing)</h2>
+      <div class="stage-image animated">
+        <div>
+          <ul>
+            <li><strong>Timing:</strong> 2-3 Weeks Before Sowing</li>
+            <li><strong>Fertilizer:</strong> Organic Manure (Compost/FYM)</li>
+            <li><strong>Purpose:</strong> Improve soil structure, increase organic matter</li>
+            <li><strong>Recommended Quantity:</strong> 5-10 tons/ha</li>
+            <li><strong>Diseases:</strong> Early leaf spot, Late leaf spot, Rust</li>
+          </ul>
+        </div>
+        <img src="/groundnut/1.jpg" alt="Pre-Planting Stage" class="modal-trigger">
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2 class="animated">At Sowing</h2>
+      <div class="stage-image animated">
+        <div>
+          <ul>
+            <li><strong>Timing:</strong> Sowing Time</li>
+            <li><strong>Fertilizer:</strong> Starter Fertilizer (N-P-K blend)</li>
+            <li><strong>Purpose:</strong> Provide balanced nutrients for initial growth</li>
+            <li><strong>Recommended Quantity:</strong> 10-20 kg/ha</li>
+          </ul>
+        </div>
+        <img src="/groundnut/2.png" alt="At Sowing Stage" class="modal-trigger">
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2 class="animated">Vegetative Growth (4-6 Weeks)</h2>
+      <div class="stage-image animated">
+        <div>
+          <ul>
+            <li><strong>Timing:</strong> 4-6 Weeks After Sowing</li>
+            <li><strong>Fertilizer:</strong> Nitrogen (N) (If Needed)</li>
+            <li><strong>Purpose:</strong> Support vegetative growth in N-deficient soils</li>
+            <li><strong>Recommended Quantity:</strong> 10-20 kg/ha</li>
+          </ul>
+        </div>
+        <img src="/groundnut/3.jpg" alt="Vegetative Growth Stage" class="modal-trigger">
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2 class="animated">Flowering Stage</h2>
+      <div class="stage-image animated">
+        <div>
+          <ul>
+            <li><strong>Timing:</strong> 8-10 Weeks After Sowing</li>
+            <li><strong>Fertilizer:</strong> Potassium (K) (Top-Dressing)</li>
+            <li><strong>Purpose:</strong> Improve pod filling and seed quality</li>
+            <li><strong>Recommended Quantity:</strong> 20-30 kg/ha</li>
+          </ul>
+        </div>
+        <img src="/groundnut/4.jpeg" alt="Pod Development Stage" class="modal-trigger">
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2 class="animated">Maturity Stage</h2>
+      <div class="stage-image animated">
+        <div>
+          <ul>
+            <li><strong>Timing:</strong> 10+ Weeks After Sowing</li>
+            <li><strong>Fertilizer:</strong> No Further Fertilization</li>
+            <li><strong>Purpose:</strong> Allow pods to mature, avoid excessive vegetative growth</li>
+            <li><strong>Recommended Quantity:</strong> Not applicable</li>
+          </ul>
+        </div>
+        <img src="/groundnut/5.jpg" alt="Maturity Stage" class="modal-trigger">
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage" src="">
+    </div>
+  </div>
+
+  <script>
+    // Back button functionality
+    function goBack() {
+      window.history.back();
+    }
+
+    // Get modal elements
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // Get all images with the class 'modal-trigger'
+    var images = document.getElementsByClassName("modal-trigger");
+
+    // For each image, add an event listener to open the modal
+    Array.from(images).forEach(image => {
+      image.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      }
+    });
+
+    // When the user clicks the close button, close the modal
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of the image
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

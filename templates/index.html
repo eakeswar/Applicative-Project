@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimech</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Center container */
+        .container {
+            text-align: center;
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header */
+        h1 {
+            font-size: 2.5rem;
+            color: #006400;
+            margin-bottom: 20px;
+        }
+
+        /* File input styling */
+        .file-input {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px dashed #4CAF50;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #e8f5e9;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 80%;
+        }
+        .file-input:hover {
+            background-color: #c8e6c9;
+        }
+
+        /* Button styling */
+        .upload-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .upload-btn:hover {
+            background-color: #388e3c;
+        }
+
+        /* Image preview styling */
+        .image-preview {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain; /* Keeps the aspect ratio */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agrimech</h1>
+        
+        <!-- Form to upload and classify the image -->
+        <form action="/predict" method="POST" enctype="multipart/form-data" id="uploadForm">
+            <!-- File input trigger button -->
+            <label for="file" class="file-input">Choose an Image of Chili or Maize</label>
+            <input type="file" id="file" name="file" style="display: none;" accept="image/*" onchange="previewImage(event)">
+
+            <!-- Image preview -->
+            <img id="preview" class="image-preview" alt="Image Preview">
+
+            <!-- Submit button -->
+            <button type="submit" class="upload-btn">Classify Image</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to display the selected image preview
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('preview');
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';  // Show the preview image
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
