@@ -1,0 +1,21 @@
+# Auto normalize line endings for all files
+* text=auto
+
+# Maintain Unix style (LF) line endings for Python scripts
+*.py text eol=lf
+
+# Force JSON and Jupyter Notebooks to use LF (safer with data files)
+*.json text eol=lf
+*.ipynb text eol=lf
+
+# Shell scripts (if you have any)
+*.sh text eol=lf
+
+# Mark images and binary files as binary (prevents line-ending conversion)
+*.png binary
+*.jpg binary
+*.pdf binary
+
+# If you ever use Git LFS for big files
+# *.h5 filter=lfs diff=lfs merge=lfs -text
+# *.pt filter=lfs diff=lfs merge=lfs -text

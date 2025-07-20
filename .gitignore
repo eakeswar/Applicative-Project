@@ -1,0 +1,52 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Logs
+logs/
+*.log
+
+# Uploaded or user files
+uploads/
+public/
+
+# Large model files
+models/
+*.h5
+*.pt
+*.pth
+*.onnx
+*.tflite
+
+# Node.js dependencies and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS, Windows, and IDE/editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Build and distribution folders
+dist/
+build/
+
+# PDF and HTML output (optional, only ignore if you don’t want them in the repo)
+*.pdf
+*.html
+
+# Other temporary or hidden system files
+*.swp
+*.bak
